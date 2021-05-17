@@ -1,13 +1,16 @@
 import { ADD_APPLES, REDUCE_APPLES } from '../constants';
-import { Action } from '../types';
+import { Action, AppleState } from '../types';
 
-const appleReducer = (state: number = 0, action: Action): number => {
+const initialAppleState: AppleState = {
+  apples: 0,
+};
+const appleReducer = (state: AppleState = initialAppleState, action: Action): AppleState => {
   switch (action.type) {
     case ADD_APPLES:
-      return state + 1;
+      return { apples: state.apples + 1 };
 
     case REDUCE_APPLES:
-      return state - 1;
+      return { apples: state.apples - 1 };
 
     default:
       return state;

@@ -1,13 +1,16 @@
 import { ADD_ORANGES, REDUCE_ORANGES } from '../constants';
-import { Action } from '../types';
+import { Action, OrangeState } from '../types';
 
-const orangeReducer = (state: number = 0, action: Action): number => {
+const initialOrangeState: OrangeState = {
+  oranges: 0,
+};
+const orangeReducer = (state: OrangeState = initialOrangeState, action: Action): OrangeState => {
   switch (action.type) {
     case ADD_ORANGES:
-      return state + 1;
+      return { oranges: state.oranges + 1 };
 
     case REDUCE_ORANGES:
-      return state - 1;
+      return { oranges: state.oranges - 1 };
 
     default:
       return state;
