@@ -2,7 +2,7 @@
 
 ## This is a practice project.
 
-## Instructions steps
+## Installation steps
 
 1. Clone this repository to your local system
 2. Within the repo folder run command `npm install`
