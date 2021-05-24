@@ -4,7 +4,12 @@ import { addApples, addOranges, reduceApples, reduceOranges } from './Redux';
 import { State } from './Redux/types';
 import { Add, Remove, TableCell, Table, TableHeadCell } from './components';
 import { APPLES, ORANGES } from './Constants';
-function App() {
+
+interface AppProps {
+  className?: string;
+}
+
+function App({ className }: AppProps) {
   const apples: Number = useSelector((state: State) => {
     return state.apples.apples;
   });
@@ -22,7 +27,8 @@ function App() {
   };
 
   return (
-    <div className='container'>
+    <div className={className}>
+      <h2>Practice Project</h2>
       <Table>
         <thead>
           <tr>
