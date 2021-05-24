@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addApples, addOranges, reduceApples, reduceOranges } from './Redux';
 import { State } from './Redux/types';
+import { Add, Remove, TableCell, Table, TableHeadCell } from './components';
 
 function App() {
   const apples: Number = useSelector((state: State) => {
@@ -22,43 +23,43 @@ function App() {
 
   return (
     <div className='container'>
-      <table>
+      <Table>
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Add</th>
-            <th>Reduce</th>
+            <TableHeadCell>Item</TableHeadCell>
+            <TableHeadCell>Add</TableHeadCell>
+            <TableHeadCell>Reduce</TableHeadCell>
           </tr>
         </thead>
         <tbody>
           <tr className='u-full-width'>
-            <td>Apples:{apples}</td>
-            <td>
-              <button className='button-primary' onClick={() => increment('apples')}>
+            <TableCell>Apples:{apples}</TableCell>
+            <TableCell>
+              <Add className='button-primary' onClick={() => increment('apples')}>
                 Add
-              </button>
-            </td>
-            <td>
-              <button onClick={() => decrement('apples')} disabled={apples === 0}>
+              </Add>
+            </TableCell>
+            <TableCell>
+              <Remove onClick={() => decrement('apples')} disabled={apples === 0}>
                 Reduce
-              </button>
-            </td>
+              </Remove>
+            </TableCell>
           </tr>
           <tr className='u-full-width'>
-            <td>Oranges:{oranges}</td>
-            <td>
-              <button className='button-primary' onClick={() => increment('oranges')}>
+            <TableCell>Oranges:{oranges}</TableCell>
+            <TableCell>
+              <Add className='button-primary' onClick={() => increment('oranges')}>
                 Add
-              </button>
-            </td>
-            <td>
-              <button onClick={() => decrement('oranges')} disabled={oranges === 0}>
+              </Add>
+            </TableCell>
+            <TableCell>
+              <Remove onClick={() => decrement('oranges')} disabled={oranges === 0}>
                 Reduce
-              </button>
-            </td>
+              </Remove>
+            </TableCell>
           </tr>
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
