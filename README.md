@@ -2,11 +2,11 @@
 
 ## This is a practice project.
 
-## Instructions to run
+## Instructions steps
 
-Step 1. Clone this repository to your local system
-Step 2. Within the repo folder run command `npm install`
-Step 3. Then run command `npm start`
+1. Clone this repository to your local system
+2. Within the repo folder run command `npm install`
+3. Then run command `npm start`
 
 #### It contains my practice code of
 
