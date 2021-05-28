@@ -12,9 +12,9 @@
 
 1. Redux
 2. Styled Components
+3. Error Boundaries
 
 #### Future additions
 
 1. HOC
-2. Error Boundaries
-3. Context API
+2. Context API

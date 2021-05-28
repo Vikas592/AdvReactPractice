@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addApples, addOranges, reduceApples, reduceOranges } from './Redux';
 import { State } from './Redux/types';
-import { Add, Remove, TableCell, Table, TableHeadCell } from './components';
+import { Add, Remove, TableCell, Table, TableHeadCell, ErrorBoundary } from './components';
 import { APPLES, ORANGES } from './Constants';
 
 interface AppProps {
@@ -29,6 +29,7 @@ function App({ className }: AppProps) {
   return (
     <div className={className}>
       <h2>Practice Project</h2>
+      <ErrorBoundary>
       <Table>
         <thead>
           <tr>
@@ -66,6 +67,7 @@ function App({ className }: AppProps) {
           </tr>
         </tbody>
       </Table>
+</ErrorBoundary>
     </div>
   );
 }
