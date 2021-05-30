@@ -40,28 +40,28 @@ function App({ className }: AppProps) {
           </thead>
           <tbody>
             <tr>
-              <TableCell>Apples:{apples}</TableCell>
+              <TableCell>Apples: {apples}</TableCell>
               <TableCell>
                 <Button variant='add' onClick={() => increment(APPLES)}>
-                  ADD
+                  Add
                 </Button>
               </TableCell>
               <TableCell>
                 <Button variant='reduce' onClick={() => decrement(APPLES)} disabled={apples === 0}>
-                  REDUCE
+                  Reduce
                 </Button>
               </TableCell>
             </tr>
             <tr>
-              <TableCell noBorder={true}>Oranges:{oranges}</TableCell>
+              <TableCell noBorder={true}>Oranges: {oranges}</TableCell>
               <TableCell noBorder={true}>
                 <Button variant='add' onClick={() => increment(ORANGES)}>
-                  ADD
+                  Add
                 </Button>
               </TableCell>
               <TableCell noBorder={true}>
                 <Button variant='reduce' onClick={() => decrement(ORANGES)} disabled={oranges === 0}>
-                  REDUCE
+                  Reduce
                 </Button>
               </TableCell>
             </tr>

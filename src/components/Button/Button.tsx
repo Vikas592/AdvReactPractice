@@ -7,6 +7,7 @@ interface ButtonProps {
 const Button = styled.button<ButtonProps>`
   border: none;
   color: white;
+  text-transform: uppercase;
   border-radius: 5px;
   width: 90px;
   height: 35px;
