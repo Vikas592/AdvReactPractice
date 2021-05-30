@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addApples, addOranges, reduceApples, reduceOranges } from './Redux';
 import { State } from './Redux/types';
-import { Add, Remove, TableCell, Table, TableHeadCell, ErrorBoundary } from './components';
+import { Button, TableCell, Table, TableHeadCell, ErrorBoundary } from './components';
 import { APPLES, ORANGES } from './Constants';
 
 interface AppProps {
@@ -30,44 +30,44 @@ function App({ className }: AppProps) {
     <div className={className}>
       <h2>Practice Project</h2>
       <ErrorBoundary>
-      <Table>
-        <thead>
-          <tr>
-            <TableHeadCell>Item</TableHeadCell>
-            <TableHeadCell>Add</TableHeadCell>
-            <TableHeadCell>Reduce</TableHeadCell>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <TableCell>Apples:{apples}</TableCell>
-            <TableCell>
-              <Add className='button-primary' onClick={() => increment(APPLES)}>
-                Add
-              </Add>
-            </TableCell>
-            <TableCell>
-              <Remove onClick={() => decrement(APPLES)} disabled={apples === 0}>
-                Reduce
-              </Remove>
-            </TableCell>
-          </tr>
-          <tr>
-            <TableCell noBorder={true}>Oranges:{oranges}</TableCell>
-            <TableCell noBorder={true}>
-              <Add className='button-primary' onClick={() => increment(ORANGES)}>
-                Add
-              </Add>
-            </TableCell>
-            <TableCell noBorder={true}>
-              <Remove onClick={() => decrement(ORANGES)} disabled={oranges === 0}>
-                Reduce
-              </Remove>
-            </TableCell>
-          </tr>
-        </tbody>
-      </Table>
-</ErrorBoundary>
+        <Table>
+          <thead>
+            <tr>
+              <TableHeadCell>Item</TableHeadCell>
+              <TableHeadCell>Add</TableHeadCell>
+              <TableHeadCell>Reduce</TableHeadCell>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <TableCell>Apples:{apples}</TableCell>
+              <TableCell>
+                <Button variant='add' onClick={() => increment(APPLES)}>
+                  ADD
+                </Button>
+              </TableCell>
+              <TableCell>
+                <Button variant='reduce' onClick={() => decrement(APPLES)} disabled={apples === 0}>
+                  REDUCE
+                </Button>
+              </TableCell>
+            </tr>
+            <tr>
+              <TableCell noBorder={true}>Oranges:{oranges}</TableCell>
+              <TableCell noBorder={true}>
+                <Button variant='add' onClick={() => increment(ORANGES)}>
+                  ADD
+                </Button>
+              </TableCell>
+              <TableCell noBorder={true}>
+                <Button variant='reduce' onClick={() => decrement(ORANGES)} disabled={oranges === 0}>
+                  REDUCE
+                </Button>
+              </TableCell>
+            </tr>
+          </tbody>
+        </Table>
+      </ErrorBoundary>
     </div>
   );
 }
